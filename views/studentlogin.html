@@ -14,7 +14,7 @@
       <div class="form-container sign-up-container">
          <form action="/signup" id="signupForm" method="post">
             <h1>Create Account</h1>
-            <input type="tel" name="phone_number" id="phone" placeholder="phone number" required pattern="\(7|8|9)\d{9}\">
+            <input type="tel" name="phone_number" id="phone" placeholder="phone number" pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">SignUp</button>
@@ -49,7 +49,11 @@
       </div>
    </div>
    
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous">
+   </script>
    <script type="text/javascript">
       const signUpButton = document.getElementById('signUp');
       const signInButton = document.getElementById('signIn');
@@ -61,6 +65,8 @@
       signInButton.addEventListener('click', () => {
          container.classList.remove("right-panel-active");
       });
+      
+      
    </script>
 </body>
 </html>

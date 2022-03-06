@@ -231,3 +231,8 @@ input {
 	height: 40px;
 	width: 40px;
 }
+
+.field-error {
+   font-size: .7rem;
+   text-align: left;
+}

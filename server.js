@@ -6,6 +6,9 @@ const User = require("./models/User.model");
 // Server Instance
 const app = express();
 
+// Application Configuration
+const PORT = process.env.PORT ?? 3000;
+
 // Basic Middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -79,8 +82,7 @@ app.post("/signup", async (req, res) => {
 });
 
 // Server Port Serving & Listening
-app.listen(1234, () => 
-{
-    connect();
-   console.log("Server started at http://localhost:1234");
+app.listen(PORT, () => {
+   connect();
+   console.log(`\u2705 Server started at http://localhost:${PORT}`);
 });
