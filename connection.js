@@ -9,11 +9,10 @@ const OPTIONS = {
 function connect() {
    mongoose
       .connect(URI, OPTIONS)
-      .then(() => console.log("Connection made!"))
       .catch((err) => console.log(err));
    
    mongoose.connection.on("connected", () => {
-      console.log("[\u2713] Connected to the MongoDB Atlas!");
+      console.log("\u2705 Connected to the MongoDB Atlas!");
    });
    
    mongoose.connection.on("error", (err) => {
@@ -21,7 +20,7 @@ function connect() {
    });
    
    mongoose.connection.on("disconnected", () => {
-      console.log("\n\n[✓] Mongodb connection closed!");
+      console.log("\n\n\u2705 Mongodb connection closed!");
    });
    
    process.on("SIGINT", async () => {
